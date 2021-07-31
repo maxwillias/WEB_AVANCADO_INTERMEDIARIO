@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Loja</title>
+    <title>Lista de Alunos</title>
 </head>
 <body>
     <table>
         <thead>
             <tr>
-                <th>Produto</th>
-                <th>Preço</th>
+                <th>Nome dos alunos:</th>
             </tr>
         </thead>
         <tbody>
-            {% for produto in produtos %}
+            {% for aluno in alunos %}
             <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
-                <td>{{ produto.preco }}</td>
+                <td><a href="{% url 'aluno' aluno.id %}">{{ aluno.nome }}</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+
 </body>
 </html>

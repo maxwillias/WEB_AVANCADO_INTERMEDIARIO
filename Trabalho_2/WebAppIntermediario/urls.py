@@ -1,8 +1,8 @@
 from django.urls import path
 from .views import index
-from .views import index, produto
+from .views import aluno
 
 urlpatterns = [
     path('', index, name='index'),
-    path('produto/<int:id>', produto, name='produto'),
+    path('aluno/<int:id>', aluno, name='aluno'),
 ]

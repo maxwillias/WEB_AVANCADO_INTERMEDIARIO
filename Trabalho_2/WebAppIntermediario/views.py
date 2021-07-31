@@ -1,24 +1,24 @@
 from django.shortcuts import render
-from WebAppIntermediario.models import Produto
+from WebAppIntermediario.models import Aluno
 
 # Create your views here.
 
 
 def index(request):
-    produtos = Produto.objects.all()
+    alunos = Aluno.objects.all()
 
-    chaveProduto = {
-        'produtos': produtos
+    chaveAluno ={
+        'alunos': alunos
     }
 
-    return render(request, 'index.html', chaveProduto)
+    return render(request, 'index.html', chaveAluno)
 
 
-def produto(request, id):
-    produto = Produto.objects.get(id=id)
+def aluno(request, id):
+    aluno = Aluno.objects.get(id=id)
 
     context = {
-        'produto': produto
+        'aluno': aluno
     }
 
-    return render(request, 'produto.html', context)
+    return render(request, 'aluno.html', context)

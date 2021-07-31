@@ -1,13 +1,11 @@
 from django.contrib import admin
-from .models import Produto, Cliente
+from .models import Aluno
 
 
-class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ('nome','preco','estoque')
+class AlunoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'ingresso', 'nota', 'situacao')
 
 # Register your models here.
 
 
-admin.site.register(Produto, ProdutoAdmin)
-admin.site.register(Cliente)
-
+admin.site.register(Aluno, AlunoAdmin)

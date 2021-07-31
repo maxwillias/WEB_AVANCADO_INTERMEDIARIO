@@ -1,21 +1,11 @@
 from django.db import models
 
 # Create your models here.
-
-
-class Produto(models.Model):
+class Aluno(models.Model):
     nome = models.CharField('Nome', max_length=100)
-    preco = models.DecimalField('Preço', decimal_places=2, max_digits=8)
-    estoque = models.IntegerField('Quantidade em Estoque')
+    ingresso = models.DateField('Período de Ingresso')
+    nota = models.DecimalField('Nota - Web Avançado', decimal_places=2, max_digits=8)
+    situacao = models.CharField('Situação', max_length=20)
 
     def __str__(self):
         return self.nome
-
-
-class Cliente(models.Model):
-    nome = models.CharField('Nome', max_length=50)
-    sobrenome = models.CharField('Sobrenome', max_length=100)
-    email = models.EmailField('E-mail', max_length=100)
-
-    def __str__(self):
-        return f'{self.nome} {self.sobrenome}'
